@@ -1,11 +1,13 @@
 ---
 layout: page
-title: About
+title: About me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I decided to start yet another software developer blog to share my experience from my journey to make the Internet better place ;). I hope you will find something on my pages, if something is obvious and you wasted your time - I am sorry, it was not obvious for me at the moment I wrote the post, so it has to be useful for someone else as well. 
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+During my career I have worked on different technologies and levels of software development - I have broken everything from servers, databases to browsers, caused deadlocks, memory leaks, then fixed and improved them!  
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+If you would like to discuss something with me (or rant about my ranting!), just drop me an [email](mailto:{{ site.email }}).
+
+I am Senior Software Developer currently working for Kainos Software Ltd. - but this is my personal blog and views are my own. 

@@ -1,8 +1,8 @@
 # Site settings
 title:  Adam Komisarek's rants
-email: akkomisarek@gmail.com
+email: contact@akomisarek.com
 description: > # this means to ignore newlines until "baseurl:"
-  This is yet another software development blog on the Internet 
+  This is yet another software development blog on the Internet.
   I will write about interesting stuff I have encountered during my work or other projects.
   If I help save your time I will be happy!  
 baseurl: "" # the subpath of your site, e.g. /blog/

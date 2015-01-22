@@ -8,6 +8,9 @@ layout: default
     <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
 
+  <section class="tldr-section">
+    {{ page.tldr }}
+  </section>
   <article class="post-content">
     {{ content }}
   </article>

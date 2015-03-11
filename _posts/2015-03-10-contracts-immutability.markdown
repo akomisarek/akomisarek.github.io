@@ -19,7 +19,7 @@ You have simple Person class with first name and last name fields. Every person 
 
 	Set<Person> persons = new HashSet<>();
 	persons.add(adamK);
-	persons.add(adamk);
+	persons.add(adamK);
 	persons.add(johnS);
 
 	//What is the size of the persons Set? - obviously 2

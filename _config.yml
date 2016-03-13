@@ -1,6 +1,6 @@
 # Site settings
 title:  Adam Komisarek's rants
-email: contact@akomisarek.com
+email: akakus@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   This is yet another software development blog on the Internet.
   I will write about interesting stuff I have encountered during my work or other projects.
@@ -8,7 +8,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://akomisarek.github.io" # the base hostname & protocol for your site
 twitter_username: adamkomisarek
-github_username: 
+github_username: akomisarek
 
 # Build settings
 markdown: kramdown

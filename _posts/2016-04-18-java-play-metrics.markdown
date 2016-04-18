@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Java Play Framework metrics"
-date:   2016-04-18 21:00:00
+date:   2016-04-18 20:05:00
 categories: development
 tldr: Java Play Framework (2.3.10) Dropwizard metrics, can be found <a href="https://github.com/KainosSoftwareLtd/play-java-metrics">here</a>
 ---

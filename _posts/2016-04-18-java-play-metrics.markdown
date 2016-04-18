@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Java Play Framework metrics"
-date:   2016-03-13 22:28:26
+date:   2016-04-18 21:00:00
 categories: development
 tldr: Java Play Framework (2.3.10) Dropwizard metrics, can be found <a href="https://github.com/KainosSoftwareLtd/play-java-metrics">here</a>
 ---
@@ -64,22 +64,22 @@ Additionally, application can report this under some URL - this is what I did fo
 
 ## Quick word about performance
 
-To be honest I didn't run complete meaningful performance tests - just wanted to check if there is obvious performance penalty using the additional processing and the *Dropwizard metrics* library. Here are two screenshots from JMeter output (ignore errors, they are appearing upon test stop, 100% is endpoint always throwing errors):
+I ran some performance tests to check if my monitoring enhancements have got any adverse impact on response times from the Play application. I deployed the application on Heroku free Dyno, it has got 512 MB of RAM, 4 Virtual Cores, but it's computation power is not specified in the documentation. For requests I used jMeter on my Macbook Pro (Early 2015 (MacBook 8,1). 1.3 Ghz, 8Gb RAM 1600 Mhz DDR3, 256Gb SSD (FileVault enabled), Intel HD Graphics 5300 1536Mb. El Capitan, 10.11).
 
-![Not instrumented](/images/notinstrumented.png)  
+Before I started to capture timings, I ran around 10k requests as a warmup. The test was using 100 threads. Workers were hitting various application endpoints: one with monitoring, another without, one was throwing error. I tested the internal HTTP client instrumentation as well - it  was making the request to the Google home page and simply returning the HTML.  
+
+Please see results presented on below screenshots.
+
+### Not instrumented
+![Not instrumented](/images/notinstrumented.png)
+
+### Instrumented
 ![Instrumented](/images/instrumented.png)  
 
-The bottom one comes from the metrics turned on. It is better than test with metrics off, I guess it was random, my machine was less loaded or something, but we can see there is almost no difference. Again you can discard my tests results as I ran them from same maching the application was standing, but it gave me assurance I didn't create bottleneck using metrics library. 
+As you can see there is no performance impact. The 90% timings were almost the same in both cases, the difference is minimal and such small difference is worth having additional information about the platform. The errors you can observe in the results are caused by the interruption of performance tests in JMeter, all requests were handled successfully. 
 
-## Summary
+The clients timings are a bit unexpected, but they are dependant on the upstream component - Google homepage, which was probably throttling my requests after hitting mark of over 20k in really short amount of time. Most importantingly there is no slowdown of instrumented version.
 
-Time to quickly wrap up as this is longer than I wanted to be: 
-
-* Remember about monitoring of your applications in production. If it is not happening challenge your Ops, Developers and Architects. It will save you a lot of time. 
-* Give [Dropwizard metrics](metricsUrl) a shot
-* [Download](metricsRepo) metrics repo for Play Framework Java for your new Play Framework project with metrics, please contribute or ask for feature.
-
-In the end I want one thing for you to take out from this post. _MONITOR_ your applications. _CHALLENGE_ if it is not happening. 
 
 [jvmMetricsDoc]: https://dropwizard.github.io/metrics/3.1.0/apidocs/com/codahale/metrics/jvm/package-summary.html
 [metricsRepo]: https://github.com/KainosSoftwareLtd/play-java-metrics
